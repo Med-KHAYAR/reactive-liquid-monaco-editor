@@ -168,7 +168,7 @@ export class CompletionAdapter<T extends ILanguageWorkerWithCompletions>
 		return this._triggerCharacters;
 	}
 
-	provideCompletionItems(
+	public provideCompletionItems(
 		model: editor.IReadOnlyModel,
 		position: Position,
 		context: languages.CompletionContext,
