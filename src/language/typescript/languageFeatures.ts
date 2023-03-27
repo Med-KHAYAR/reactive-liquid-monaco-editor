@@ -341,6 +341,10 @@ export class DiagnosticsAdapter extends Adapter {
 		);
 	}
 
+	public convertDiagnostics(model: editor.ITextModel, diag: Diagnostic): editor.IMarkerData {
+		return this._convertDiagnostics(model, diag);
+	}
+
 	private _convertDiagnostics(model: editor.ITextModel, diag: Diagnostic): editor.IMarkerData {
 		const diagStart = diag.start || 0;
 		const diagLength = diag.length || 1;

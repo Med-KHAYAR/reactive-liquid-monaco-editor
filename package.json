@@ -1,9 +1,9 @@
 {
-	"name": "monaco-editor",
-	"version": "0.36.1",
+	"name": "reactive-liquid-monaco-editor",
+	"version": "0.0.1",
 	"vscodeRef": "07d120e10a4d3ac790e65b8a6dc85195546df664",
 	"private": true,
-	"description": "A browser based code editor",
+	"description": "A browser based code editor (monaco-editor 0.36.1)",
 	"homepage": "https://github.com/microsoft/monaco-editor",
 	"author": "Microsoft Corporation",
 	"license": "MIT",

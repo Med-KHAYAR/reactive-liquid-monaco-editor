@@ -118,7 +118,7 @@ export class DiagnosticsAdapter<T extends ILanguageWorkerWithDiagnostics> {
 	}
 }
 
-function toSeverity(lsSeverity: number | undefined): MarkerSeverity {
+export function toSeverity(lsSeverity: number | undefined): MarkerSeverity {
 	switch (lsSeverity) {
 		case lsTypes.DiagnosticSeverity.Error:
 			return MarkerSeverity.Error;
@@ -133,7 +133,7 @@ function toSeverity(lsSeverity: number | undefined): MarkerSeverity {
 	}
 }
 
-function toDiagnostics(resource: Uri, diag: lsTypes.Diagnostic): editor.IMarkerData {
+export function toDiagnostics(resource: Uri, diag: lsTypes.Diagnostic): editor.IMarkerData {
 	let code = typeof diag.code === 'number' ? String(diag.code) : <string>diag.code;
 
 	return {
