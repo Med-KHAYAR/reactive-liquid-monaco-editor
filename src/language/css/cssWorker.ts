@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { worker } from '../../fillers/monaco-editor-core';
-import * as cssService from 'vscode-css-languageservice';
+import * as cssService from 'reactive-liquid-css-languageservice';
 import { Options } from './monaco.contribution';
 
 export class CSSWorker {
