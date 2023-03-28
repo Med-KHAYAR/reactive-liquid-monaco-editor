@@ -17,9 +17,11 @@ export class WorkerManager {
 
 	private _worker: editor.MonacoWebWorker<CSSWorker> | null;
 	private _client: Promise<CSSWorker> | null;
+	private _stopable: boolean;
 
-	constructor(defaults: LanguageServiceDefaults) {
+	constructor(defaults: LanguageServiceDefaults, stopable: boolean = true) {
 		this._defaults = defaults;
+		this._stopable = stopable;
 		this._worker = null;
 		this._client = null;
 		this._idleCheckInterval = window.setInterval(() => this._checkIfIdle(), 30 * 1000);
@@ -42,7 +44,7 @@ export class WorkerManager {
 	}
 
 	private _checkIfIdle(): void {
-		if (!this._worker) {
+		if (!this._worker || !this._stopable) {
 			return;
 		}
 		let timePassedSinceLastUsed = Date.now() - this._lastUsedTime;

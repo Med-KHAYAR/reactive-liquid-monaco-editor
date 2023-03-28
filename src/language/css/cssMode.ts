@@ -154,7 +154,7 @@ export function setupCssWithProviders(defaults: LanguageServiceDefaults): {
 	const providers: IDisposable[] = [];
 	let exportedProviders: CssProviders = {};
 
-	const client = new WorkerManager(defaults);
+	const client = new WorkerManager(defaults, false);
 	disposables.push(client);
 
 	const worker: languageFeatures.WorkerAccessor<CSSWorker> = (
